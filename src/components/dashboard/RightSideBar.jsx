@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function RightSideBar() {
     return (
-        <div className="right-sdie-bar-conrainer">
+        <div className="right-side-bar-container">
 
         </div>
     )

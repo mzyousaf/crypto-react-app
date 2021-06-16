@@ -1,0 +1,483 @@
+/*   Theme default css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/*====== font-family-name========
+font-family: 'Roboto', sans-serif;
+*/
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; 
+    color: #000;
+    font-size: 14px;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+
+.chart-container {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    flex: 1 1 auto;
+}
+
+.right-menu {
+    flex: 0 0 208px;
+    background-color: #0d173a;
+    padding: 15px;
+}
+
+.right-menu .call-put-block .call-put-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.call-put-buttons button {
+    width: 84px;
+    height: 84px;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.call-put-buttons button i {
+    margin-bottom: 5px;
+}
+
+.call-put-buttons button:hover {
+    color: white;
+}
+
+.call-put-buttons .btn-call {
+    background-color: #20b443;
+}
+
+.call-put-buttons .btn-call:hover {
+    background-color: #22bd46;
+}
+
+.call-put-buttons .btn-put {
+    background-color: #e4462d;
+}
+
+.call-put-buttons .btn-put:hover {
+    background-color: #e54e36;
+}
+
+.chart-container .chart {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.chart-container .chart-control-container {
+    position: absolute;
+    left: 20px;
+    bottom: 30px;
+}
+
+.chart-control-container .chart-control-block {
+    margin-bottom: 10px;
+    box-shadow: 0 2px 0 rgb(12, 20, 57);
+}
+
+.chart-control-container .chart-control-block:last-child {
+    margin-bottom: 0px;
+}
+
+.chart-control-container a.chart-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    background-color: rgb(44, 52, 91);
+    color: #888;
+}
+
+.chart-control-container a.chart-control:after {
+    display: none;
+}
+
+.chart-control-container a.chart-control:hover {
+    text-decoration: none;
+    background-color: rgb(58, 68, 111);
+}
+
+.chart-control-container a.chart-control[disabled] {
+    color: #555;
+    pointer-events: none;
+    cursor: none;
+}
+
+.chart-control-container a.chart-control[disabled]:hover {
+    background-color: rgb(44, 52, 91);
+}
+
+.chart-control-container a.chart-control.active {
+    color: white;
+}
+
+.chart-control-container a.chart-control svg {
+    width: 21px;
+    height: 21px;
+    fill: #888;
+}
+
+.chart-control-container a.chart-control[disabled] svg {
+    fill: #555;
+}
+
+.chart-control-container a.chart-control.active svg {
+    fill: white;
+}
+
+.chart-control-container .dropright .dropdown-menu.show {
+    background-color: rgb(44, 52, 91);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.chart-control-container .dropright .dropdown-item {
+    padding: 0;
+    color: #888;
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #888;
+    font-size: 14px;
+}
+
+.chart-control-container .dropright .dropdown-item:last-child {
+    border-right: none;
+}
+
+.chart-control-container .dropright .dropdown-item.active,
+.chart-control-container .dropright .dropdown-item:focus,
+.chart-control-container .dropright .dropdown-item:hover {
+    background-color: rgb(58, 68, 111);
+    font-weight: bold;
+    color: white;
+}
+
+.chart-data-control-container {
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    display: inline-flex;
+}
+
+.chart-data-control-container .dropdown a.dropdown-toggle {
+    background-color: #2d375c;
+    box-shadow: 0 2px 3px 0 #000;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-data-control-container .dropdown a.dropdown-toggle:after {
+    display: none;
+}
+
+.chart-data-control-container .dropdown .dropdown-menu {
+    min-width: unset;
+    color: white;
+    background-color: #2d375c;
+}
+
+.chart-data-control-container .dropdown .dropdown-item-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-data-control-container .dropdown .dropdown-item-container object {
+    width: 30px;
+    margin-right: 15px;
+}
+
+.chart-data-control-container .dropdown .dropdown-toggle .dropdown-item-container:after {
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+    margin-left: 10px;
+}
+
+.chart-data-control-container .dropdown i {
+    margin-right: 15px;
+}
+
+.chart-data-control-container .dropdown .dropdown-menu .dropdown-item {
+    color: white;
+}
+
+.chart-data-control-container .dropdown .dropdown-menu a.dropdown-item:focus,
+.chart-data-control-container .dropdown .dropdown-menu a.dropdown-item:hover,
+.chart-data-control-container .dropdown .dropdown-menu a.dropdown-item.active {
+    background-color: #3b4770;
+}
+
+.chart-data-control-container a.chart-data-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 14px;
+    font-size: 20px;
+    background-color: rgb(44, 52, 91);
+    box-shadow: 2px 2px 0 rgb(12, 20, 57);
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+    margin-right: 15px;
+}
+
+.chart-data-control-container a.chart-data-control:last-child {
+    margin-right: 0px;
+}
+
+.chart-data-control-container a.chart-data-control:hover {
+    text-decoration: none;
+    background-color: rgb(54, 62, 101);
+}
+
+.chart-data-control-container a.chart-data-control i {
+    margin-right: 10px;
+}
+
+.range-label {
+    width: 70px;
+}
+
+.range-label.x-axis-range2 {
+    width: 65px;
+    font-size: 12px;
+    color: white;
+}
+
+.range-label.x-axis-range3 {
+    width: 85px;
+    font-size: 12px;
+    color: white;
+}
+
+.range-label.x-axis-range4 {
+    width: 85px;
+    font-size: 12px;
+    color: white;
+}
+
+.range-label.y-axis-range1 {
+    width: 80px;
+    font-size: 14px;
+    color: white;
+}
+
+.range-label.y-axis-range2 {
+    width: 70px;
+    font-size: 12px;
+    color: white;
+}
+
+.range-label span {
+    padding: 0px 5px;
+    height: 22px;
+    position: relative;
+    border-left-width: 1px;
+    width: calc(100% - 11px);
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+}
+
+.range-label.x-axis-range2 span {
+    background-color: rgb(238, 150, 30);
+}
+
+.range-label.x-axis-range3 span {
+    background-color: rgb(0, 164, 65);
+}
+
+.range-label.x-axis-range4 span {
+    background-color: rgb(124, 154, 180);
+}
+
+.range-label.y-axis-range1 span {
+    background-color: rgb(0, 136, 255);
+}
+
+.range-label.y-axis-range2 span {
+    background-color: rgb(124, 154, 180);
+}
+
+.range-label span i {
+    margin-right: 5px;
+}
+
+.range-label.x-axis-range2 span i {
+    transform: rotate(45deg);
+    margin-right: 8px;
+}
+
+.range-label.arrow-left {
+    text-align: right;
+}
+
+.range-label.arrow-left span:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -1px;
+    left: -11px;
+    border-right: 12px solid;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+}
+
+.range-label.arrow-right span:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -1px;
+    right: -11px;
+    border-left: 12px solid;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+}
+
+.range-label.arrow-right.x-axis-range2 span:after {
+    border-left-color: rgb(238, 150, 30);
+}
+
+.range-label.arrow-left.x-axis-range3 span:before {
+    border-right-color: rgb(0, 164, 65);
+}
+
+.range-label.arrow-right.x-axis-range4 span:after {
+    border-left-color: rgb(124, 154, 180);
+}
+
+.range-label.arrow-left.y-axis-range1 span:before {
+    border-right-color: rgb(0, 136, 255);
+}
+
+.range-label.arrow-left.y-axis-range2 span:before {
+    border-right-color: rgb(124, 154, 180);
+}
+
+.call-start-label, .put-start-label, .call-put-end-label {
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    border: 2px solid white;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.call-start-label {
+    background-color: #20b443;
+}
+
+.call-start-label i {
+    transform: rotate(-45deg);
+}
+
+.put-start-label, .call-put-end-label {
+    background-color: #e4462d;
+}
+
+.put-start-label i {
+    transform: rotate(45deg);
+}
+
+#modal-indicator-mgmt .modal-dialog {
+    position: absolute;
+    left: 65px;
+    bottom: 30px;
+    margin: 0;
+}
+
+#modal-indicator-mgmt .modal-dialog .modal-content {
+    background-color: #2d375c;
+    box-shadow: 0 2px 2px #000829;
+    border: none;
+    color: white;
+}
+
+#modal-indicator-mgmt .modal-dialog .modal-content .modal-header {
+    border: none;
+    padding: 15px 10px;
+}
+
+#modal-indicator-mgmt .modal-dialog .modal-content .modal-header .modal-title {
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+#modal-indicator-mgmt .modal-dialog .modal-content .modal-body {
+    padding: 0px 10px 15px 10px;
+}
+
+#modal-indicator-mgmt .btn-indicator {
+    background-color: #212a4d;
+    color: white;
+    font-size: 13px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#modal-indicator-mgmt .indicators-panel .indicator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#modal-indicator-mgmt .indicators-panel .indicator:first-child {
+    margin-top: 15px;
+}
+
+#modal-indicator-mgmt .indicators-panel .indicator i {
+    margin-right: 10px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+#modal-indicator-mgmt .indicators-panel .indicator i:hover {
+    color: #fff;
+}
+
+#modal-indicator-mgmt .indicators-panel .indicator i:last-child {
+    margin-right: 0px;
+}
