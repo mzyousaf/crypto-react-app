@@ -4,6 +4,7 @@ import React from "react";
 
 //Components
 import AppComponent from "../components/AppComponent";
+import DashboardPageContainer from "./pages/Dashboard/DashboardPageContainer";
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
 		<div className="App">
 			<Router>
 				<Switch>
-					<Route exact path="/" component={AppComponent} />
+					<Route exact path="/" component={DashboardPageContainer} />
 				</Switch>
 			</Router>
 		</div>
