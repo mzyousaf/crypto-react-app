@@ -2,4 +2,39 @@
     height          : 100%;
     width           : 69px;
     background-color: $secondaryColor;
+
+
+    .icons-left-bar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;    
+        
+
+        .icon-view{
+            font-size: 17px;
+            cursor: pointer;
+            color: lightgray;
+
+            &:hover {
+                color: #3099F5;
+              }
+        }
+
+        .icon-upper-half{
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .route-names{
+            font-size: 10px;
+            color: white;
+        }
+
+    }
+    
 }
+
+
+
+
+
