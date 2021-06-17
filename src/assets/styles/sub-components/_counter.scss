@@ -1,0 +1,22 @@
+.counter-component-container {
+    width          : 125px;
+    height         : max-content;
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+    align-items    : flex-start;
+
+}
+
+.counter-container {
+    height          : max-content;
+    width           : 100%;
+    margin-top      : 6px;
+    background-color: $secondaryLiteColor;
+    border          : 1px solid $secondaryLiteColor2;
+    border-radius   : 5px;
+    padding         : 10px 10px;
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center;
+}
