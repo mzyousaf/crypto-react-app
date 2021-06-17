@@ -1,5 +1,61 @@
 .right-side-bar-container {
     height          : 100%;
     width           : 69px;
-    background-color: $secondaryColor;
+    background-color: $secondaryLiteColor;
+
+    .icons-right-bar {
+        display        : flex;
+        flex-direction : column;
+        justify-content: center;
+
+
+        .icon-view {
+            font-size: 17px;
+            cursor   : pointer;
+            color    : lightgray;
+            fill     : lightgray;
+
+            &:hover {
+                fill      : #3099F5;
+                color     : #3099F5;
+                background: #2f3f61;
+            }
+        }
+
+        .icon-upper-half {
+            padding-top   : 15px;
+            padding-bottom: 15px;
+        }
+
+        .route-names {
+            font-size: 10px;
+            color    : white;
+        }
+
+    }
+
+    .right-side-bar-slider {
+        top             : 0;
+        width           : 0px;
+        position        : absolute;
+        right           : 69px;
+        height          : 100%;
+        transition      : width 0.5s;
+        box-shadow      : -10px 0px 10px 0px $secondaryColor;
+        background-color: $secondaryLiteColor2;
+        overflow        : hidden;
+
+        .silder-inner-container {
+            padding: 20px 10px;
+
+            .sider-innerbox-container {
+                padding         : 10px 20px;
+                background-color: $secondaryLiteColor;
+            }
+        }
+    }
+
+    .slider-width-transition {
+        width: 360px;
+    }
 }

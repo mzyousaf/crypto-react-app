@@ -1,74 +1,77 @@
-// // Kindly press Ctrl+A and then press Ctrl+/ to use the code
+// Kindly press Ctrl+A and then press Ctrl+/ to use the code
 
-// // here the typography is defined 
+// here the typography is defined 
 
-// @import "../mixins/typegraphyMixin";
+@import "../mixins/typegraphyMixin";
 
-// .heading1 {
-//   @include typography(Open Sans, 300, 96px, 100px, -0.015em, null); //60 70
-// }
+.heading1 {
+    @include typography(Open Sans, 300, 96px, 100px, -0.015em, null); //60 70
+}
 
-// .heading2 {
-//   @include typography(Open Sans, 300, 60px, 70px, -0.005em, null); //70px
-// }
+.heading2 {
+    @include typography(Open Sans, 300, 60px, 70px, -0.005em, null); //70px
+}
 
-// .heading3 {
-//   @include typography(Open Sans, 400, 48px, 50px, -0.0035em, null);
-// }
+.heading3 {
+    @include typography(Open Sans, 400, 48px, 50px, -0.0035em, null);
+}
 
-// .heading4 {
-//   @include typography(Open Sans, 400, 34px, 45px, -0.0025em, null);
-// }
+.heading4 {
+    @include typography(Open Sans, 400, 34px, 45px, -0.0025em, null);
+}
 
-// .heading5 {
-//   @include typography(Open Sans, 400, 24px, 20px, 0.005em, null);
-// }
+.heading5 {
+    @include typography(Open Sans, 400, 24px, 20px, 0.005em, null);
+}
 
-// .heading6 {
-//   @include typography(Open Sans, 400, 20px, 20px, 0.015em, null);
-// }
+.heading6 {
+    @include typography(Open Sans, 400, 20px, 20px, 0.015em, null);
+}
 
-// .subtitle1 {
-//   @include typography(Roboto, 400, 16px, 20px, 0.015em, null);
-// }
+.subtitle1 {
+    @include typography(Roboto, 400, 16px, 20px, 0.015em, null);
+}
 
-// .subtitle2 {
-//   @include typography(Roboto, 400, 14px, 20px, 0.001em, null);
-// }
-// .subtitle3 {
-//   @include typography(Open Sans, 400, 20px, 20px, 0.001em, null);
-// }
-// .body1 {
-//   @include typography(Roboto, 400, 16px, 20px, 0.005em, null);
-// }
+.subtitle2 {
+    @include typography(Roboto, 400, 14px, 20px, 0.001em, null);
+}
 
-// .body2 {
-//   @include typography(Roboto, 400, 14px, 20px, 0.0025em, null);
-// }
+.subtitle3 {
+    @include typography(Open Sans, 400, 20px, 20px, 0.001em, null);
+}
 
-// .button-text {
-//   @include typography(Roboto, 400, 14px, 20px, 0.004em, $whiteColor);
-// }
+.body1 {
+    @include typography(Roboto, 400, 16px, 20px, 0.005em, null);
+}
 
-// .caption {
-//   @include typography(Roboto, 400, 12px, 20px, 0.004em, null);
-// }
+.body2 {
+    @include typography(Roboto, 400, 14px, 20px, 0.0025em, null);
+}
 
-// .overline {
-//   @include typography(Roboto, 400, 10px, 20px, 0.015em, null);
-// }
-// // @mixin typography($fontFamily, $fontSize, $fontWeight, $letterSpacing, $lineHight, $color)
+.button-text {
+    @include typography(Roboto, 400, 14px, 20px, 0.004em, white);
+}
 
-// .pointer {
-//   &:hover {
-//     cursor: pointer;
-//   }
-// }
+.caption {
+    @include typography(Roboto, 400, 12px, 20px, 0.004em, null);
+}
 
-// .primary-text {
-//   color: $primaryColor;
-// }
+.overline {
+    @include typography(Roboto, 400, 10px, 20px, 0.015em, null);
+}
 
-// .white-text {
-//   color: $whiteColor;
-// }
+// @mixin typography($fontFamily, $fontSize, $fontWeight, $letterSpacing, $lineHight, $color)
+
+.pointer {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.primary-text {
+    color: $primaryColor;
+}
+
+.white-text {
+    color: white;
+}
