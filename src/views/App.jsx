@@ -1,22 +1,52 @@
 import "../assets/styles/App.scss";
+import LeftSideBar from '../components/dashboard/LeftSideBar'
+import RightSideBar from '../components/dashboard/right-side-bar/RightSideBar'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import React from "react";
+import { withRouter } from "react-router";
+import React, { useState } from "react";
 
 //Components
-import AppComponent from "../components/AppComponent";
-import DashboardPageContainer from "./pages/Dashboard/DashboardPageContainer";
+import Dashboard from "./dashboard/Content";
+import Analytics from "./analytics/Content";
+import Education from "./education/Content";
+import Finance from "./finance/Content";
+import Info from "./info/Content";
+import Profile from "./profile/Content";
+import Apps from "./app/Content";
+import Navbar from '../components/dashboard/Navbar';
 
 function App() {
+	const [rightSidePanel, setRightSidePanel] = useState(false);
+
+	const rightSideBar = (flag) => {
+		setRightSidePanel(flag)
+	}
 
 	return (
 		<div className="App">
-			<Router>
-				<Switch>
-					<Route exact path="/" component={DashboardPageContainer} />
-				</Switch>
-			</Router>
+			<div className="dashboard-page-container">
+				<Navbar />
+				<div className="w-100 h-100 d-flex justify-content-between">
+
+					<LeftSideBar history={history} />
+					<div className="w-100">
+						<Switch>
+							<Route exact path="/" component={() => <Dashboard history={history} />} />
+							<Route exact path="/analytics" component={() => <Analytics history={history} />} />
+							<Route exact path="/education" component={() => <Education history={history} />} />
+							<Route exact path="/finance" component={() => <Finance history={history} />} />
+							<Route exact path="/info" component={() => <Info history={history} />} />
+							<Route exact path="/profile" component={() => <Profile history={history} />} />
+							<Route exact path="/apps" component={() => <Apps history={history} />} />
+						</Switch>
+					</div>
+
+					<RightSideBar rightSidePanel={(flag) => rightSideBar(flag)} />
+
+				</div>
+			</div>
 		</div>
 	);
 }
 
-export default App;
+export default withRouter(App);

@@ -1,1 +1,9 @@
 @import '../style-assets/colors';
+
+.plain-button {
+    padding         : 12px 12px;
+    background-color: $primaryColor;
+    width           : max-content;
+    height          : max-content;
+    border-radius   : 4px;
+}

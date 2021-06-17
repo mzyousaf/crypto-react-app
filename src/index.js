@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.scss";
 import App from "./views/App";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router } from "react-router-dom";
 
 //bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -20,7 +21,9 @@ const store = createStore(
 ReactDOM.render(
 	<React.StrictMode>
 		<Provider store={store}>
-			<App />
+			<Router>
+				<App />
+			</Router>
 		</Provider>
 	</React.StrictMode>,
 	document.getElementById("root")
