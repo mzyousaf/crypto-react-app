@@ -27,7 +27,10 @@ export default function LeftSideBar(props) {
                     <div className={`icon-view icon-upper-half `}
                         style={{
                             color: history.location.pathname === item?.route ? "#3099F5" : "",
-                            borderLeft: history.location.pathname === item?.route ? "3px solid #3099F5" : "3px solid #283049"
+                            background: history.location.pathname === item?.route ? "#2f3f61" : "",
+                            borderLeft: history.location.pathname === item?.route ? "3px solid #3099F5" : "3px solid #283049",
+                            borderTop: history.location.pathname === item?.route ? "1px solid #3099F5" : "1px solid #283049",
+                            borderBottom: history.location.pathname === item?.route ? "1px solid #3099F5" : "1px solid #283049"
                         }}
                         onClick={() => sideBarIcon(item?.route)}>
                         {item?.val}

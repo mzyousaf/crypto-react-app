@@ -3,7 +3,7 @@ import LeftSideBar from '../components/dashboard/LeftSideBar'
 import RightSideBar from '../components/dashboard/RightSideBar'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router";
-import React from "react";
+import React, {useState} from "react";
 
 //Components
 import Dashboard from "./dashboard/Content";
@@ -16,6 +16,11 @@ import Apps from "./app/Content";
 import Navbar from '../components/dashboard/Navbar';
 
 function App() {
+	const [rightSidePanel, setRightSidePanel] = useState(false);
+
+	const rightSideBar = (flag) => {
+		setRightSidePanel(flag)
+	}
 
 	return (
 		<div className="App">
@@ -35,7 +40,12 @@ function App() {
 					<Route exact path="/apps" component={() => <Apps history={history} />} />
 				</Switch>
 			
-			<RightSideBar />
+			{rightSidePanel &&
+				<div className="w-20 h-100 d-flex justify-content-end">
+					Hello BAR
+				</div>
+			}
+			<RightSideBar rightSidePanel={(flag)=> rightSideBar(flag)} />
 			
 			</div>
         </div>
