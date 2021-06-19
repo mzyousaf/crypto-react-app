@@ -38,24 +38,30 @@
         top             : 0;
         width           : 0px;
         position        : absolute;
-        right           : 69px;
+        right           : 64.5px;
         height          : 100%;
         transition      : width 0.5s;
         box-shadow      : -10px 0px 10px 0px $secondaryColor;
-        background-color: $secondaryLiteColor2;
+        background-color: $secondaryLiteColor;
         overflow        : hidden;
 
         .silder-inner-container {
             padding: 20px 10px;
 
             .sider-innerbox-container {
-                padding         : 10px 20px;
+                padding         : 10px 10px;
                 background-color: $secondaryLiteColor;
             }
         }
     }
 
     .slider-width-transition {
-        width: 360px;
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .right-side-bar-slider {
+        right: 57px !important;
     }
 }
