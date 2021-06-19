@@ -9,12 +9,12 @@ import { ReactComponent as DollarIcon } from "../../../assets/icons/dollar.svg"
 export default function RightSideBar(props) {
 
     const leftIcons = [
-        { val: <i class="fas fa-exchange-alt"></i>, name: 'Deals', component: <Deals /> },
-        { val: <i class="fas fa-bolt"></i>, name: 'Trends', component: <Trends /> },
-        { val: <i class="fas fa-users"></i>, name: 'Social', component: <Social /> },
         {
             val: <DollarIcon width="21px" height="21px" fill="inherit" style={{ marginBottom: "5px" }} />, name: 'Earn', component: <UserBids />
-        }
+        },
+        { val: <i class="fas fa-exchange-alt"></i>, name: 'Deals', component: <Deals /> },
+        { val: <i class="fas fa-bolt"></i>, name: 'Trends', component: <Trends /> },
+        { val: <i class="fas fa-users"></i>, name: 'Social', component: <Social /> }
     ];
 
     const [rightSide, setRightSide] = useState(false);

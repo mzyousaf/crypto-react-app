@@ -1,5 +1,19 @@
-@media only screen and (min-width: 1921px) {
-  // .maxScreenSize {
-  // //   width: 1920px;
-  // }
+@media only screen and (max-width: 767px) {
+  .on-mobile-display {
+    display: flex !important;
+  }
+
+  .on-laptop-display {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 762px) {
+  .on-mobile-display {
+    display: none !important;
+  }
+
+  .on-laptop-display {
+    display: flex !important;
+  }
 }

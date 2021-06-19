@@ -2,8 +2,8 @@ import "../assets/styles/App.scss";
 import LeftSideBar from '../components/dashboard/LeftSideBar'
 import RightSideBar from '../components/dashboard/right-side-bar/RightSideBar'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { withRouter } from "react-router";
-import React, { useState } from "react";
+import { useHistory, useRouteMatch, withRouter } from "react-router";
+import React, { useState, useEffect } from "react";
 
 //Components
 import Dashboard from "./dashboard/Content";
@@ -21,6 +21,7 @@ function App() {
 	const rightSideBar = (flag) => {
 		setRightSidePanel(flag)
 	}
+	const history = useHistory()
 
 	return (
 		<div className="App">
@@ -40,8 +41,11 @@ function App() {
 							<Route exact path="/apps" component={() => <Apps history={history} />} />
 						</Switch>
 					</div>
+					{
+						history.location.pathname === "/" &&
+						<RightSideBar rightSidePanel={(flag) => rightSideBar(flag)} />
+					}
 
-					<RightSideBar rightSidePanel={(flag) => rightSideBar(flag)} />
 
 				</div>
 			</div>
