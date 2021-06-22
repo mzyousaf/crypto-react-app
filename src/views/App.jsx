@@ -14,6 +14,8 @@ import Info from "./info/Content";
 import Profile from "./profile/Content";
 import Apps from "./app/Content";
 import Navbar from '../components/dashboard/Navbar';
+import { Modal, Button } from "react-bootstrap";
+import DropDown from "../components/sub-components/DropDown";
 
 function App() {
 	const [rightSidePanel, setRightSidePanel] = useState(false);
@@ -21,6 +23,8 @@ function App() {
 	const rightSideBar = (flag) => {
 		setRightSidePanel(flag)
 	}
+	const [alert,setAlert] = useState(false);
+
 	const history = useHistory()
 
 	return (
@@ -40,10 +44,12 @@ function App() {
 							<Route exact path="/profile" component={() => <Profile history={history} />} />
 							<Route exact path="/apps" component={() => <Apps history={history} />} />
 						</Switch>
+
+
 					</div>
 					{
 						history.location.pathname === "/" &&
-						<RightSideBar rightSidePanel={(flag) => rightSideBar(flag)} />
+						<RightSideBar alertCenter={(flag)=>setAlert(flag)}  rightSidePanel={(flag) => rightSideBar(flag)} />
 					}
 
 

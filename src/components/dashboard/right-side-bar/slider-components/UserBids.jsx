@@ -1,27 +1,39 @@
 import React, { useState } from 'react'
+import { useHistory } from "react-router-dom"
 import Counter from "../../../sub-components/Counter"
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Modal } from 'react-bootstrap'
 import Button from '../../../sub-components/Button'
 import DropDown from '../../../sub-components/DropDown'
 
-export default function UserBids() {
+export default function UserBids(props) {
+    const [alert, setAlert] = useState(false)
+    const history = useHistory()
 
-    const [exchangeHistory, setExchangeHistory] = useState([
-        { label: "EUR/USD", action: "Buy" },
-        { label: "EUR/USD", action: "Sell" },
-        { label: "EUR/USD", action: "Sell" }
-    ])
+    const alertPopup = () => {
+        // props.centerAlert(true)
+
+        history.push({
+            pathname: '/',
+            state: { popup: true }
+        })
+    }
+
     return (
         <div className="w-100 h-100 silder-inner-container">
+
             <div className="sider-innerbox-container">
                 <Row className="m-0">
                     <Col xs="12" className=" p-0 d-flex justify-content-start">
-                        <DropDown type="currency" />
+                        <div className="pointer" onClick={() => alertPopup()}>
+                            <DropDown type="currency" />
+                        </div>
                     </Col>
+
                     <Col xs="12" className="p-0 d-flex flex-column justify-content-start align-items-start mt-4">
                         <span className="body1" style={{ color: "lightgray" }}>Current Balance</span>
                         <span className="heading6 white-text mt-1">$10000</span>
                     </Col>
+
                     {/* <Col md="8" className="p-0 mt-4">
                         <Counter
                             style={{ width: "100%" }}
@@ -31,13 +43,17 @@ export default function UserBids() {
                     <Col md="4">
                     </Col> */}
 
-                    <Col xs="6" className="pl-0 mt-4" style={{ marginTop: "25px" }}>
+                    <Col xs="6" className="pl-0" style={{ marginTop: "25px" }}>
                         <Counter
                             style={{ width: "100%" }}
-                            label="Amount" />
+                            label="Amount" count={true} />
+
                     </Col>
                     <Col xs="6" className="pr-0" style={{ marginTop: "25px" }}>
-                        {/* <DropDown type="currency" /> */}
+                        <Counter
+                            style={{ width: "100%" }}
+                            label="Expiry" count={false}
+                        />
                     </Col>
 
                     <Col xs="12" className="p-0 d-flex flex-column justify-content-start align-items-start mt-4">
@@ -62,21 +78,10 @@ export default function UserBids() {
                     </Col>
                 </Row>
 
-                <Row className="m-0 mt-4">
-                    <Col xs="12" className="p-0">
-                        {exchangeHistory.map((history, index) => {
-                            return (
-                                <div key={index} className="w-100 d-flex justify-content-between py-1" style={{ borderBottom: "0.25px solid #2f3f61" }}>
-                                    <span style={{ color: "lightgray" }} className="body2">{history.label}</span>
-                                    <div className="w-25 d-flex justify-content-start">
-                                        <span style={{ color: `${history.action === "Buy" ? "green" : "red"}` }} className="body2">{history.action}</span>
-                                    </div>
-                                </div>
-                            )
-                        })}
-                    </Col>
-                </Row>
+
             </div>
+
+
         </div>
     )
 }

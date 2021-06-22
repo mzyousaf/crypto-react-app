@@ -1,13 +1,14 @@
 .left-side-bar-container {
     height          : 100%;
     width           : 69px;
+    z-index         : 999;
     background-color: $secondaryLiteColor;
 
 
     .icons-left-bar {
         display        : flex;
         flex-direction : column;
-        justify-content: center;
+        justify-content: flex-start;
 
 
         .icon-view {
@@ -45,7 +46,9 @@
     transition      : width 0.5s;
 
     .mobile-side-bar-content-container {
-        width: 100%;
+        z-index   : 999;
+        background: #1a243a;
+        width     : 100%;
 
         .mobile-side-bar-content-profile-section {
             height                       : 220px;
@@ -95,4 +98,28 @@
 
 .mobile-left-side-bar-extended {
     width: 300px;
+}
+
+
+.modal-dialog {
+    .modal-content {
+        background-color: #1a243a;
+        border          : 0px solid #1a243a;
+
+        .modal-header {
+            border-bottom: 0px;
+
+            h5 {
+                color: white !important;
+            }
+        }
+
+        .modal-footer {
+            border-top: 0px;
+
+            div {
+                background: red !important;
+            }
+        }
+    }
 }
