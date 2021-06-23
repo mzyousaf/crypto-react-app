@@ -102,9 +102,20 @@
 
 
 .modal-dialog {
+    height: 470px !important;
+
+    .modal-selection {
+        background-color: #2f3f61;
+
+        &:hover {
+            background-color: rgb(47, 69, 97);
+        }
+    }
+
     .modal-content {
         background-color: #1a243a;
         border          : 0px solid #1a243a;
+        height          : 100%;
 
         .modal-header {
             border-bottom: 0px;
@@ -121,5 +132,43 @@
                 background: red !important;
             }
         }
+    }
+}
+
+.modal-list-section {
+    height: 270px;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .modal-dialog {
+        width : 90% !important;
+        height: 450px !important;
+
+        .modal-content {
+            background-color: #1a243a;
+            border          : 0px solid #1a243a;
+            height          : 100%;
+
+            .modal-header {
+                border-bottom: 0px;
+
+                h5 {
+                    color: white !important;
+                }
+            }
+
+            .modal-footer {
+                border-top: 0px;
+
+                div {
+                    background: red !important;
+                }
+            }
+        }
+    }
+
+    .modal-list-section {
+        height: 175px;
     }
 }
