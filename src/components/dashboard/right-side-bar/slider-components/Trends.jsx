@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Row, Col } from 'react-bootstrap'
-import Counter from '../../../sub-components/Counter'
+import DropDownV1 from '../../../sub-components/DropDownV1'
 
 export default function Trends() {
 
@@ -13,11 +13,7 @@ export default function Trends() {
     return (
         <div className="w-100 p-4">
             <div className="w-50">
-                <Counter
-                    time
-                    style={{ width: "100%" }}
-                    label="Time" count={false}
-                />
+                <DropDownV1 label="Time" options={["1 Min", "2 Min", "5 Min", "10 Min"]} />
             </div>
             <Row className="m-0 mt-4">
                 <Col xs="12" className="p-0">

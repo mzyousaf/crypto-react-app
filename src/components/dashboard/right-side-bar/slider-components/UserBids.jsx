@@ -4,9 +4,9 @@ import Counter from "../../../sub-components/Counter"
 import { Row, Col, Modal } from 'react-bootstrap'
 import Button from '../../../sub-components/Button'
 import DropDown from '../../../sub-components/DropDown'
+import DropDownV1 from '../../../sub-components/DropDownV1'
 
 export default function UserBids(props) {
-    const [alert, setAlert] = useState(false)
     const history = useHistory()
 
     const alertPopup = () => {
@@ -24,7 +24,7 @@ export default function UserBids(props) {
             <div className="sider-innerbox-container">
                 <Row className="m-0">
                     <Col xs="12" className=" p-0 d-flex justify-content-start">
-                        <div className="pointer" onClick={() => alertPopup()}>
+                        <div onClick={() => alertPopup()} className="pointer">
                             <DropDown type="currency" />
                         </div>
                     </Col>
@@ -47,13 +47,9 @@ export default function UserBids(props) {
                         <Counter
                             style={{ width: "100%" }}
                             label="Amount" count={true} />
-
                     </Col>
                     <Col xs="6" className="pr-0" style={{ marginTop: "25px" }}>
-                        <Counter
-                            style={{ width: "100%" }}
-                            label="Expiry" count={false}
-                        />
+                        <DropDownV1 label="Time" options={["19:00", "19:05", "19:10", "19:15", "19:20", "19:25", "19:30"]} />
                     </Col>
 
                     <Col xs="12" className="p-0 d-flex flex-column justify-content-start align-items-start mt-4">
@@ -77,8 +73,6 @@ export default function UserBids(props) {
                             style={{ width: "100%", backgroundColor: "green", display: "flex", justifyContent: "space-around", alignItems: "center" }} />
                     </Col>
                 </Row>
-
-
             </div>
 
 
