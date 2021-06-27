@@ -16,6 +16,8 @@ import Apps from "./app/Content";
 import Navbar from '../components/dashboard/Navbar';
 import { Modal, Button } from "react-bootstrap";
 import DropDown from "../components/sub-components/DropDown";
+import Login from "./login/Content";
+import SignUp from "./signup/Content";
 
 function App() {
 	const [rightSidePanel, setRightSidePanel] = useState(false);
@@ -23,38 +25,47 @@ function App() {
 	const rightSideBar = (flag) => {
 		setRightSidePanel(flag)
 	}
-	const [alert,setAlert] = useState(false);
+	const [alert, setAlert] = useState(false);
 
 	const history = useHistory()
 
 	return (
-		<div className="App">
-			<div className="dashboard-page-container">
-				<Navbar />
-				<div className="w-100 h-100 d-flex justify-content-between">
+		<div className="App" >
 
-					<LeftSideBar history={history} />
-					<div className="w-100">
-						<Switch>
-							<Route exact path="/" component={() => <Dashboard history={history} />} />
-							<Route exact path="/analytics" component={() => <Analytics history={history} />} />
-							<Route exact path="/education" component={() => <Education history={history} />} />
-							<Route exact path="/finance" component={() => <Finance history={history} />} />
-							<Route exact path="/info" component={() => <Info history={history} />} />
-							<Route exact path="/profile" component={() => <Profile history={history} />} />
-							<Route exact path="/apps" component={() => <Apps history={history} />} />
-						</Switch>
+			<Switch>
+				<Route exact path="/login" component={() => <Login history={history} />} />
+				<Route exact path="/signup" component={() => <SignUp history={history} />} />
+				<Route path="/">
+					<div className="dashboard-page-container">
+						<Navbar />
+						<div className="w-100 h-100 d-flex justify-content-between">
+
+							<LeftSideBar history={history} />
+							<div className="w-100">
+								<Switch>
+									<Route exact path="" component={() => <Dashboard history={history} />} />
+									<Route exact path="analytics" component={() => <Analytics history={history} />} />
+									<Route exact path="education" component={() => <Education history={history} />} />
+									<Route exact path="finance" component={() => <Finance history={history} />} />
+									<Route exact path="info" component={() => <Info history={history} />} />
+									<Route exact path="profile" component={() => <Profile history={history} />} />
+									<Route exact path="apps" component={() => <Apps history={history} />} />
+
+								</Switch>
 
 
+							</div>
+							{
+								history.location.pathname === "/" &&
+								<RightSideBar alertCenter={(flag) => setAlert(flag)} rightSidePanel={(flag) => rightSideBar(flag)} />
+							}
+
+
+						</div>
 					</div>
-					{
-						history.location.pathname === "/" &&
-						<RightSideBar alertCenter={(flag)=>setAlert(flag)}  rightSidePanel={(flag) => rightSideBar(flag)} />
-					}
 
-
-				</div>
-			</div>
+				</Route>
+			</Switch>
 		</div>
 	);
 }
