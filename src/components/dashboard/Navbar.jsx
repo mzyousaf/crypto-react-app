@@ -1,8 +1,11 @@
 import React, { Fragment } from 'react'
+import { useHistory } from 'react-router'
 import logo from '../../assets/icons/logo.png'
 import Button from '../sub-components/Button'
 
 export default function Navbar() {
+
+    const history = useHistory()
     return (
         <Fragment>
             <div className="navbar-container on-laptop-display">
@@ -15,7 +18,7 @@ export default function Navbar() {
                         <span className="body2" style={{ color: "white" }}>$10000</span>
                     </div>
                     <div className="nav-btn-container">
-                        <Button title={"Open live account"} />
+                        <Button title={"Open live account"} onClick={() => { history.push("/login") }} />
                     </div>
 
                 </div>
@@ -34,7 +37,7 @@ export default function Navbar() {
                         <span className="body2" style={{ color: "white", fontWeight: "bolder" }}>$10000</span>
                     </div>
                     <div className="mobile-nav-btn-container ml-3">
-                        <Button title={"Open live account"} style={{ backgroundColor: "#232f47", padding: "6px 10px" }} />
+                        <Button title={"Open live account"} onClick={() => { history.push("/login") }} style={{ backgroundColor: "#232f47", padding: "6px 10px" }} />
                     </div>
 
                 </div>
