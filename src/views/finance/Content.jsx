@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Switch, useRouteMatch, Route } from 'react-router'
 import SubNavbar from '../../components/sub-components/SubNavbar'
 import Depostite from './Depostite'
 import Analytics from '../../components/Analytics/Analytics'
+import Withdraw from './Withdraw'
 
 export default function Finance(props) {
 
@@ -16,6 +17,7 @@ export default function Finance(props) {
 
     const links = [
         { name: "Deposite", icon: null, route: "/deposite" },
+        { name: "Withdraw", icon: null, route: "/payment_history " },
         { name: "Payment History", icon: null, route: "/payment_history " }
     ]
 
@@ -29,9 +31,19 @@ export default function Finance(props) {
                         ?
                         <Depostite />
                         :
-                        <div className="p-5">
-                            <Analytics />
-                        </div>
+                        <Fragment>
+                            {
+                                step === 1
+                                    ?
+                                    <div className="p-0">
+                                        <Withdraw />
+                                    </div> :
+                                    <div className="p-5">
+                                        <Analytics />
+                                    </div>
+                            }
+                        </Fragment>
+
                 }
             </div>
         </div>

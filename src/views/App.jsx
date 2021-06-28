@@ -19,7 +19,9 @@ import DropDown from "../components/sub-components/DropDown";
 import Profile from "../components/profile/Profile"
 import Login from "./login/Content";
 import SignUp from "./signup/Content";
-import Analytics from "../components/Analytics/Analytics";
+import TradeHistory from "./trad-history/Context";
+import StatsPopup from "../components/common/StatsPopup";
+import { GlobalPopupContext } from "../context/GlobalPopup";
 
 function App() {
 	const [rightSidePanel, setRightSidePanel] = useState(false);
@@ -31,41 +33,58 @@ function App() {
 
 	const history = useHistory()
 	const { path } = useRouteMatch()
+	const [globalPopupStatus, setGlobalPopupStatus] = useState({
+		visiblityStatus: false,
+		startTimmer: false
+	})
+
+	useEffect(() => {
+		if (globalPopupStatus.startTimmer) {
+			setTimeout(() => {
+				setGlobalPopupStatus({ ...globalPopupStatus, visiblityStatus: true, startTimmer: false })
+			}, 3000);
+		}
+	}, [globalPopupStatus.startTimmer])
 
 	return (
 		<div className="App" >
-
 			<Switch>
 				<Route exact path="/login" component={() => <Login history={history} />} />
 				<Route exact path="/signup" component={() => <SignUp history={history} />} />
 				<Route path="/">
-					<div className="dashboard-page-container">
-						<Navbar />
-						<div className="w-100 h-100 d-flex justify-content-between">
+					<GlobalPopupContext.Provider value={{ globalPopupStatus, setGlobalPopupStatus }}>
+						<div className="dashboard-page-container">
+							<Navbar />
+							<div className="w-100 h-100 d-flex justify-content-between">
+								{
+									globalPopupStatus.visiblityStatus &&
+									<div className="w-100 d-flex align-items-center justify-content-center" style={{ position: "absolute", zIndex: "999", height: "calc(100% - 57px)" }}>
+										<div className="w-100 h-100" style={{ position: "absolute", backgroundColor: "#192235", opacity: "0.6" }}></div>
+										<StatsPopup />
+									</div>
+								}
+								<LeftSideBar history={history} />
+								<div className="w-100">
+									<Switch>
+										<Route exact path={`${path}`} component={() => <Dashboard history={history} />} />
+										<Route path={`${path}trade_history`} component={() => <TradeHistory history={history} />} />
+										<Route path={`${path}education`} component={() => <Education history={history} />} />
+										<Route exact path={`${path}finance`} component={() => <Finance history={history} />} />
+										<Route path={`${path}info`} component={() => <Info history={history} />} />
+										<Route path={`${path}profile`} component={() => <Profile history={history} />} />
+										<Route path={`${path}apps`} component={() => <Apps history={history} />} />
 
-							<LeftSideBar history={history} />
-							<div className="w-100">
-								<Switch>
-									<Route exact path={`${path}`} component={() => <Dashboard history={history} />} />
-									<Route path={`${path}analytics`} component={() => <Analytics history={history} />} />
-									<Route path={`${path}education`} component={() => <Education history={history} />} />
-									<Route exact path={`${path}finance`} component={() => <Finance history={history} />} />
-									<Route path={`${path}info`} component={() => <Info history={history} />} />
-									<Route path={`${path}profile`} component={() => <Profile history={history} />} />
-									<Route path={`${path}apps`} component={() => <Apps history={history} />} />
-
-								</Switch>
+									</Switch>
 
 
+								</div>
+								{
+									history.location.pathname === "/" &&
+									<RightSideBar alertCenter={(flag) => setAlert(flag)} rightSidePanel={(flag) => rightSideBar(flag)} />
+								}
 							</div>
-							{
-								history.location.pathname === "/" &&
-								<RightSideBar alertCenter={(flag) => setAlert(flag)} rightSidePanel={(flag) => rightSideBar(flag)} />
-							}
-
-
 						</div>
-					</div>
+					</GlobalPopupContext.Provider>
 
 				</Route>
 			</Switch>

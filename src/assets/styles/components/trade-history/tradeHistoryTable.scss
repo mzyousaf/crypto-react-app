@@ -1,0 +1,17 @@
+.trade-histroy-container {
+    margin-top     : 150px;
+    display        : flex;
+    flex-direction : column;
+    justify-content: flex-start;
+    align-items    : flex-start;
+
+    .trade-histroy-table {
+        padding         : 15px;
+        background-color: #1a243a;
+        margin-top      : 20px;
+        width           : 900px;
+        height          : 495px;
+        max-height      : 495px;
+        overflow-y      : auto;
+    }
+}
