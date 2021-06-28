@@ -21,8 +21,8 @@ export default function DropDownV1(props) {
         setIsDropDownClosed(status)
     }
     return (
-        <Fragment>
-            <div className="counter-component-container pointer" style={props.style} onClick={() => { setOpenDrop(!isDropDownClosed) }}>
+        <div className="position-relative" style={props.style}>
+            <div className="w-100 counter-component-container pointer" onClick={() => { setOpenDrop(!isDropDownClosed) }}>
                 <span className="button-text" style={{ color: "lightgray" }}>{props.label}</span>
                 <div className="counter-container">
                     <div>
@@ -39,7 +39,7 @@ export default function DropDownV1(props) {
 
             {
                 !isDropDownClosed &&
-                <div className="mt-1" style={{ background: "rgb(35, 47, 71)", position: "absolute", zIndex: "10", height: "max-content", maxHeight: "90px", width: "125px", border: "1px solid #232f47", borderRadius: "3px", overflowY: "hidden" }}>
+                <div className="mt-1" style={{ background: "rgb(35, 47, 71)", position: "absolute", zIndex: "10", height: "max-content", maxHeight: "90px", width: "100%", border: "1px solid #232f47", borderRadius: "3px", overflowY: "hidden" }}>
                     {
                         options.length > 0 && options.map((option, index) => {
                             return (
@@ -53,6 +53,6 @@ export default function DropDownV1(props) {
                 </div>
             }
 
-        </Fragment>
+        </div>
     )
 }

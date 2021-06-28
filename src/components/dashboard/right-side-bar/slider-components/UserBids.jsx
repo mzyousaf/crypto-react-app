@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { useHistory } from "react-router-dom"
 import Counter from "../../../sub-components/Counter"
 import { Row, Col, Modal } from 'react-bootstrap'
 import Button from '../../../sub-components/Button'
 import DropDown from '../../../sub-components/DropDown'
 import DropDownV1 from '../../../sub-components/DropDownV1'
+import { GlobalPopupContext } from '../../../../context/GlobalPopup'
 
 export default function UserBids(props) {
     const history = useHistory()
@@ -18,6 +19,7 @@ export default function UserBids(props) {
         })
     }
 
+    const { globalPopupStatus, setGlobalPopupStatus } = useContext(GlobalPopupContext)
     return (
         <div className="w-100 h-100 silder-inner-container">
 
@@ -63,14 +65,17 @@ export default function UserBids(props) {
                         {/* <i class="fa fa-2x fa-chevron-down white-text" style={{ position: 'absolute' }}></i> */}
                         <Button title="SELL"
                             preIcon={<i class="fa fa-2x fa-chevron-down white-text" style={{ fontSize: "23px" }}></i>}
-                            style={{ width: "100%", backgroundColor: "red", display: "flex", justifyContent: "space-around", alignItems: "center" }} />
+                            style={{ width: "100%", backgroundColor: "red", display: "flex", justifyContent: "space-around", alignItems: "center" }}
+                            onClick={() => { setGlobalPopupStatus({ ...globalPopupStatus, startTimmer: true }) }}
+                        />
 
                     </Col>
 
                     <Col xs="6" className="pr-0" style={{ position: "relative" }}>
                         <Button title="BUY"
                             preIcon={<i class="fa fa-2x fa-chevron-up white-text" style={{ fontSize: "23px" }}></i>}
-                            style={{ width: "100%", backgroundColor: "green", display: "flex", justifyContent: "space-around", alignItems: "center" }} />
+                            style={{ width: "100%", backgroundColor: "green", display: "flex", justifyContent: "space-around", alignItems: "center" }}
+                            onClick={() => { setGlobalPopupStatus({ ...globalPopupStatus, startTimmer: true }) }} />
                     </Col>
                 </Row>
             </div>

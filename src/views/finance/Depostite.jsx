@@ -12,8 +12,8 @@ export default function Depostite() {
             <Fragment>
                 <DropDownV1 invert style={{ width: "100%" }} options={["Paypal", "Paytm", "Razorpy"]} />
                 <div className="d-flex w-100 justify-content-between align-items-center mt-3">
-                    <DropDownV1 invert options={["$ USD", "₹ IDR"]} />
-                    <Input style={{ width: "65%" }} placeholder="amount" />
+                    <DropDownV1 invert options={["$ USD", "₹ IDR"]} style={{ width: "21%" }} />
+                    <Input style={{ width: "75%" }} placeholder="amount" />
                 </div>
 
                 <div className="d-flex align-items-start mt-3">

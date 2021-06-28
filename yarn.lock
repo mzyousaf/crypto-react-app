@@ -9871,7 +9871,7 @@ react-refresh@^0.8.3:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
 
-react-rounded-image@^2.0.11:
+react-rounded-image@^2.0.13:
   version "2.0.13"
   resolved "https://registry.yarnpkg.com/react-rounded-image/-/react-rounded-image-2.0.13.tgz#488a1846f1d63f90b058b2495bc186407f610f34"
   integrity sha512-K8IHgkEbIjRDyuVOPgac2ieAy9wmEGPMsQQbDdDNzuwgJzoe5/hvVrpMCOpWgry1Lu5p+eYDOytv7dzsYTx2bQ==
@@ -11798,6 +11798,11 @@ uncontrollable@^7.2.1:
     "@types/react" ">=16.9.11"
     invariant "^2.2.4"
     react-lifecycles-compat "^3.0.4"
+
+underscore@^1.13.1:
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.13.1.tgz#0c1c6bd2df54b6b69f2314066d65b6cde6fcf9d1"
+  integrity sha512-hzSoAVtJF+3ZtiFX0VgfFPHEDRm7Y/QPjGyNo4TVdnDTdft3tr8hEkD25a1jC+TjTuE7tkHGKkhwCgs9dgBB2g==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
