@@ -1,0 +1,19 @@
+select:focus { 
+    outline: none;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+ }
+
+ #getFile {
+    display: none;
+  }
+  #getFileLabel {
+    margin-top: auto;
+    display: inline-block;
+    background: #192235;
+    height: 100%;
+    width: 100%;
+  }

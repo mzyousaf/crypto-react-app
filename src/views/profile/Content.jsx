@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Profile from '../../components/profile/Profile'
 
 export default function Profile(props) {
 
@@ -7,7 +7,7 @@ export default function Profile(props) {
 
     return (
         <div className="page-container">
-            Profile
+            <Profile />
         </div>
     )
 }

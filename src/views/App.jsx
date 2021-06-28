@@ -7,17 +7,19 @@ import React, { useState, useEffect } from "react";
 
 //Components
 import Dashboard from "./dashboard/Content";
-import Analytics from "./analytics/Content";
+// import Analytics from "./analytics/Content";
 import Education from "./education/Content";
 import Finance from "./finance/Content";
 import Info from "./info/Content";
-import Profile from "./profile/Content";
+// import Profile from "./profile/Content";
 import Apps from "./app/Content";
 import Navbar from '../components/dashboard/Navbar';
 import { Modal, Button } from "react-bootstrap";
 import DropDown from "../components/sub-components/DropDown";
+import Profile from "../components/profile/Profile"
 import Login from "./login/Content";
 import SignUp from "./signup/Content";
+import Analytics from "../components/Analytics/Analytics";
 
 function App() {
 	const [rightSidePanel, setRightSidePanel] = useState(false);
@@ -28,6 +30,7 @@ function App() {
 	const [alert, setAlert] = useState(false);
 
 	const history = useHistory()
+	const { path } = useRouteMatch()
 
 	return (
 		<div className="App" >
@@ -43,13 +46,13 @@ function App() {
 							<LeftSideBar history={history} />
 							<div className="w-100">
 								<Switch>
-									<Route exact path="" component={() => <Dashboard history={history} />} />
-									<Route exact path="analytics" component={() => <Analytics history={history} />} />
-									<Route exact path="education" component={() => <Education history={history} />} />
-									<Route exact path="finance" component={() => <Finance history={history} />} />
-									<Route exact path="info" component={() => <Info history={history} />} />
-									<Route exact path="profile" component={() => <Profile history={history} />} />
-									<Route exact path="apps" component={() => <Apps history={history} />} />
+									<Route exact path={`${path}`} component={() => <Dashboard history={history} />} />
+									<Route path={`${path}analytics`} component={() => <Analytics history={history} />} />
+									<Route path={`${path}education`} component={() => <Education history={history} />} />
+									<Route exact path={`${path}finance`} component={() => <Finance history={history} />} />
+									<Route path={`${path}info`} component={() => <Info history={history} />} />
+									<Route path={`${path}profile`} component={() => <Profile history={history} />} />
+									<Route path={`${path}apps`} component={() => <Apps history={history} />} />
 
 								</Switch>
 
